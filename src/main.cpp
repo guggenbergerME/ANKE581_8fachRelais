@@ -74,13 +74,99 @@ payload[length] = '\0';
 
         // Kanal A
         if ((char)payload[0] == 'o' && (char)payload[1] == 'n') {  
-                 Serial.println("relais_A -> AN");
+                 Serial.println("relais_B -> AN");
                  pcf8574.digitalWrite(P1, !HIGH);
               }
 
         if ((char)payload[0] == 'o' && (char)payload[1] == 'f' && (char)payload[2] == 'f') {  
-                 Serial.println("relais_A -> AUS");
+                 Serial.println("relais_B -> AUS");
                  pcf8574.digitalWrite(P1, !LOW);
+              }
+      } 
+
+    if (strcmp(topic,"ANKE581/RK001/IN/Relais/C")==0) {
+
+        // Kanal A
+        if ((char)payload[0] == 'o' && (char)payload[1] == 'n') {  
+                 Serial.println("relais_C -> AN");
+                 pcf8574.digitalWrite(P2, !HIGH);
+              }
+
+        if ((char)payload[0] == 'o' && (char)payload[1] == 'f' && (char)payload[2] == 'f') {  
+                 Serial.println("relais_C -> AUS");
+                 pcf8574.digitalWrite(P2, !LOW);
+              }
+      } 
+
+    if (strcmp(topic,"ANKE581/RK001/IN/Relais/D")==0) {
+
+        // Kanal A
+        if ((char)payload[0] == 'o' && (char)payload[1] == 'n') {  
+                 Serial.println("relais_D -> AN");
+                 pcf8574.digitalWrite(P3, !HIGH);
+              }
+
+        if ((char)payload[0] == 'o' && (char)payload[1] == 'f' && (char)payload[2] == 'f') {  
+                 Serial.println("relais_D -> AUS");
+                 pcf8574.digitalWrite(P3, !LOW);
+              }
+      } 
+
+
+    if (strcmp(topic,"ANKE581/RK001/IN/Relais/E")==0) {
+
+        // Kanal A
+        if ((char)payload[0] == 'o' && (char)payload[1] == 'n') {  
+                 Serial.println("relais_E -> AN");
+                 pcf8574.digitalWrite(P4, !HIGH);
+              }
+
+        if ((char)payload[0] == 'o' && (char)payload[1] == 'f' && (char)payload[2] == 'f') {  
+                 Serial.println("relais_E -> AUS");
+                 pcf8574.digitalWrite(P4, !LOW);
+              }
+      } 
+
+    if (strcmp(topic,"ANKE581/RK001/IN/Relais/F")==0) {
+
+        // Kanal A
+        if ((char)payload[0] == 'o' && (char)payload[1] == 'n') {  
+                 Serial.println("relais_F -> AN");
+                 pcf8574.digitalWrite(P5, !HIGH);
+              }
+
+        if ((char)payload[0] == 'o' && (char)payload[1] == 'f' && (char)payload[2] == 'f') {  
+                 Serial.println("relais_F -> AUS");
+                 pcf8574.digitalWrite(P5, !LOW);
+              }
+      } 
+
+
+    if (strcmp(topic,"ANKE581/RK001/IN/Relais/G")==0) {
+
+        // Kanal A
+        if ((char)payload[0] == 'o' && (char)payload[1] == 'n') {  
+                 Serial.println("relais_G -> AN");
+                 pcf8574.digitalWrite(P6, !HIGH);
+              }
+
+        if ((char)payload[0] == 'o' && (char)payload[1] == 'f' && (char)payload[2] == 'f') {  
+                 Serial.println("relais_G -> AUS");
+                 pcf8574.digitalWrite(P6, !LOW);
+              }
+      } 
+
+    if (strcmp(topic,"ANKE581/RK001/IN/Relais/H")==0) {
+
+        // Kanal A
+        if ((char)payload[0] == 'o' && (char)payload[1] == 'n') {  
+                 Serial.println("relais_H -> AN");
+                 pcf8574.digitalWrite(P7, !HIGH);
+              }
+
+        if ((char)payload[0] == 'o' && (char)payload[1] == 'f' && (char)payload[2] == 'f') {  
+                 Serial.println("relais_H -> AUS");
+                 pcf8574.digitalWrite(P7, !LOW);
               }
       } 
 
@@ -100,6 +186,24 @@ void reconnect() {
 
         client.subscribe("ANKE581/RK001/IN/Relais/B");
         client.publish("ANKE581/RK001/IN/Relais/B", "Online"); // mqtt Bekanntgabe
+
+        client.subscribe("ANKE581/RK001/IN/Relais/C");
+        client.publish("ANKE581/RK001/IN/Relais/C", "Online"); // mqtt Bekanntgabe
+
+        client.subscribe("ANKE581/RK001/IN/Relais/D");
+        client.publish("ANKE581/RK001/IN/Relais/D", "Online"); // mqtt Bekanntgabe
+
+        client.subscribe("ANKE581/RK001/IN/Relais/E");
+        client.publish("ANKE581/RK001/IN/Relais/E", "Online"); // mqtt Bekanntgabe
+
+        client.subscribe("ANKE581/RK001/IN/Relais/F");
+        client.publish("ANKE581/RK001/IN/Relais/F", "Online"); // mqtt Bekanntgabe
+
+        client.subscribe("ANKE581/RK001/IN/Relais/G");
+        client.publish("ANKE581/RK001/IN/Relais/G", "Online"); // mqtt Bekanntgabe
+
+        client.subscribe("ANKE581/RK001/IN/Relais/H");
+        client.publish("ANKE581/RK001/IN/Relais/H", "Online"); // mqtt Bekanntgabe                                                
       
       
     } else {
